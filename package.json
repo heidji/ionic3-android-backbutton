@@ -1,0 +1,37 @@
+{
+  "name": "ionic3-android-backbutton",
+  "version": "0.0.1",
+  "description": "A better way to control the Android Back Button for Ionic3",
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "ngc": "ngc",
+    "build": "rm -rf aot dist && npm run ngc",
+    "publishPackage": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heidji/ionic3-android-backbutton.git"
+  },
+  "keywords": [],
+  "author": "Hossam El-Nadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heidji/ionic3-android-backbutton/issues"
+  },
+  "homepage": "https://github.com/heidji/ionic3-android-backbutton#readme",
+  "devDependencies": {
+    "ionic-angular": "3.9.2",
+    "@angular/common": "5.0.0",
+    "@angular/compiler": "5.0.0",
+    "@angular/compiler-cli": "5.0.0",
+    "@angular/core": "5.0.0",
+    "@angular/platform-browser": "5.0.0",
+    "@angular/platform-browser-dynamic": "5.0.0",
+    "@angular/forms": "5.0.0",
+    "@types/node": "^6.0.60",
+    "zone.js": "0.8.18",
+    "rxjs": "5.5.2",
+    "typescript": "2.4.2"
+  }
+}
