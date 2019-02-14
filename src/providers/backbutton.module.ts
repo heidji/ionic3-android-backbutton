@@ -4,10 +4,10 @@ import {Backbutton} from "./backbutton"
 @NgModule({
 
 })
-export class HidenavModule {
+export class BackbuttonModule {
     static forRoot(): ModuleWithProviders {
         return {
-            ngModule: HidenavModule,
+            ngModule: BackbuttonModule,
             providers: [
                 Backbutton
             ]
