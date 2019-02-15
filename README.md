@@ -52,19 +52,20 @@ export class MyApp {
 register the function to be called whenever the back button is pressed. If your function returns true, the default back button behavior with be triggered, if your function returns false the default behavior will be canceled.
 #### registerBeforeExit(f: Function)
 register the function to be called whenever the app is about to exit upon hardware back button press. If your function returns true, the default back button behavior with be triggered and your app will exit, if your function returns false the default behavior will be canceled.
-####unregisterAction(type: string){
+
+#### unregisterAction(type: string){
 | type           | Description                           |
 | -------------- | --------------------------------------|
 | `default`      | unregister `registerDefaultAction()`  |
 | `default`      | unregister `registerBeforeExit()`     |
 
-####unregisterAll()
+#### unregisterAll()
 reverts back button default behavior
 
-####back()
+#### back()
 emulate android back button (including potentially exiting the app)
 
-####exit()
+#### exit()
 exit the app
 
 [npm-url]: https://npmjs.org/package/ionic3-android-backbutton
