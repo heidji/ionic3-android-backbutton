@@ -7,6 +7,46 @@
 npm i ionic3-android-backbutton
 ```
 
+## Adding to project
+
+Update your **app.module.ts** as follows:
+
+```typescript
+import {BrowserModule} from '@angular/platform-browser';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
+
+import {MyApp} from './app.component';
+import {HomePage} from '../pages/home/home';
+
+import {BackbuttonModule} from "ionic3-android-backbutton";
+
+@NgModule({
+    declarations: [
+        MyApp,
+        HomePage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp),
+        BackbuttonModule.forRoot()
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ]
+})
+export class AppModule {
+}
+
+```
+
 ## Usage
 most cases where this plugin is useful is to prevent the user from exiting the app before a certain condition is fulfilled, this is where the plugin gets useful especially when using the `registerBeforeExit()` method. See the example below.
 
@@ -21,7 +61,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {HomePage} from '../pages/home/home';
-import {Backbutton} from "../providers/backbutton";
+import {Backbutton} from "ionic3-android-backbutton";
 
 @Component({
     templateUrl: 'app.html'
@@ -58,16 +98,16 @@ register the function to be called whenever the app is about to exit upon hardwa
 | type           | Description                           |
 | -------------- | --------------------------------------|
 | `default`      | unregister `registerDefaultAction()`  |
-| `default`      | unregister `registerBeforeExit()`     |
+| `beforeexit`   | unregister `registerBeforeExit()`     |
 
 #### unregisterAll()
-reverts back button default behavior
+reverts back button default behavior.
 
 #### back()
-emulate android back button (including potentially exiting the app)
+emulate android back button (including potentially exiting the app).
 
 #### exit()
-exit the app
+exit the app.
 
 [npm-url]: https://npmjs.org/package/ionic3-android-backbutton
-[npm-image]: https://img.shields.io/badge/npm-0.0.6-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.0.7-green.svg
