@@ -2,17 +2,18 @@
 
 [![NPM version][npm-image]][npm-url]
 
-##Installation
+## Installation
 ```
 npm i ionic3-android-backbutton
 ```
 
-##Usage
+## Usage
 most cases where this plugin is useful is to prevent the user from exiting the app before a certain condition is fulfilled, this is where the plugin gets useful especially when using the `registerBeforeExit()` method. See the example below.
 
 these methods act globally and will affect the whole app so you need to unregister them manually after you don't need them.
 
-###Example: make sure user sees an alert before he leaves the page
+### Example:
+make sure user sees an alert before he leaves the page
 ```typescript
 import {Component} from '@angular/core';
 import {AlertController, Platform} from 'ionic-angular';
@@ -69,4 +70,4 @@ emulate android back button (including potentially exiting the app)
 exit the app
 
 [npm-url]: https://npmjs.org/package/ionic3-android-backbutton
-[npm-image]: https://img.shields.io/badge/npm-0.0.5-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.0.6-green.svg
