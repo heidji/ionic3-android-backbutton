@@ -52,8 +52,8 @@ most cases where this plugin is useful is to prevent the user from exiting the a
 
 these methods act globally and will affect the whole app so you need to unregister them manually after you don't need them.
 
-### Example:
-make sure user sees an alert before he leaves the page
+### Example1:
+make sure user sees an alert before he leaves the app
 ```typescript
 import {Component} from '@angular/core';
 import {AlertController, Platform} from 'ionic-angular';
@@ -88,6 +88,45 @@ export class MyApp {
     }
 }
 ```
+### Example 2:
+make user press back button a few times before being able to leave the page.
+```typescript
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Backbutton} from "ionic3-android-backbutton";
+
+@IonicPage()
+@Component({
+    selector: 'page-article',
+    templateUrl: 'article.html',
+})
+export class ArticlePage {
+
+    bbcounter = 5;
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public bb: Backbutton, public toastCtrl: ToastController) {
+    }
+
+    ionViewDidEnter() {
+        this.bb.registerDefaultAction(() => {
+            this.bbcounter --;
+            if(this.bbcounter > 0){
+                this.toastCtrl.create({
+                    message: 'Press back '+this.bbcounter+' more times',
+                    duration: 3000,
+                    position: 'bottom'
+                }).present();
+                return false; //cancel backbutton action
+            } else {
+                this.bb.unregisterAction('default'); //unregistering function because we won't need it anymore
+                return true; //allow backbutton action
+            }
+        })
+    }
+
+}
+
+```
 ### Methods
 #### registerDefaultAction(f: Function)
 register the function to be called whenever the back button is pressed. If your function returns true, the default back button behavior with be triggered, if your function returns false the default behavior will be canceled.
@@ -110,4 +149,4 @@ emulate android back button (including potentially exiting the app).
 exit the app.
 
 [npm-url]: https://npmjs.org/package/ionic3-android-backbutton
-[npm-image]: https://img.shields.io/badge/npm-0.0.8-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.0.9-green.svg
