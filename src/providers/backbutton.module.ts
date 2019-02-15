@@ -1,5 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import {Backbutton} from "./backbutton"
+import {Backbutton} from "./backbutton";
 
 @NgModule({
 

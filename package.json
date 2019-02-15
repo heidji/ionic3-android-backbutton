@@ -1,7 +1,7 @@
 {
   "name": "ionic3-android-backbutton",
-  "version": "0.0.2",
-  "description": "A better way to control the Android Back Button for Ionic3",
+  "version": "0.0.5",
+  "description": "A better and easier way to control the Android Back Button for Ionic3",
   "main": "./index.js",
   "typings": "./index.d.ts",
   "scripts": {
