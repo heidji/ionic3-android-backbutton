@@ -57,10 +57,13 @@ register the function to be called whenever the app is about to exit upon hardwa
 | -------------- | --------------------------------------|
 | `default`      | unregister `registerDefaultAction()`  |
 | `default`      | unregister `registerBeforeExit()`     |
+
 ####unregisterAll()
 reverts back button default behavior
+
 ####back()
 emulate android back button (including potentially exiting the app)
+
 ####exit()
 exit the app
 
