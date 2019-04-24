@@ -149,4 +149,4 @@ emulate android back button (including potentially exiting the app).
 exit the app.
 
 [npm-url]: https://npmjs.org/package/ionic3-android-backbutton
-[npm-image]: https://img.shields.io/badge/npm-0.0.9-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.0.11-green.svg
