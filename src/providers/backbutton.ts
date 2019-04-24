@@ -16,6 +16,8 @@ export class Backbutton {
 
     private register() {
         let nav = this.app.getRootNavs()[0];
+
+        
         if (typeof nav == 'undefined') {
             console.warn('failed to register default back button function');
             return false;
@@ -25,10 +27,18 @@ export class Backbutton {
             p._bbActions.pop();
         }
         this.platform.registerBackButtonAction(() => {
+                    let activePortal = 
+        this.app._appRoot._modalPortal.getActive() ||
+        this.app._appRoot._toastPortal.getActive() ||
+        this.app._appRoot._overlayPortal.getActive();
             if (this.funct()) {
                 let tempnav: any = nav;
-                if (tempnav._app._menuCtrl && tempnav._app._menuCtrl.isOpen()) {
-                    tempnav._app._menuCtrl.close();
+                if ((tempnav._app._menuCtrl && tempnav._app._menuCtrl.isOpen()) || activePortal ) {
+                    if( activePortal){
+                        activePortal.dismiss()
+                    }else{
+                        tempnav._app._menuCtrl.close();
+                    }
                 } else {
                     let x = tempnav._app.navPop();
                     if (!x) {
