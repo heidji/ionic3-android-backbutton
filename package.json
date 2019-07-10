@@ -1,14 +1,17 @@
 {
   "name": "ionic3-android-backbutton",
-  "version": "0.0.11",
+  "version": "0.0.15",
   "description": "A better and easier way to control the Android Back Button for Ionic3",
-  "main": "./index.js",
-  "typings": "./index.d.ts",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "ngc": "ngc",
     "build": "rm -rf aot dist && npm run ngc",
     "publishPackage": "npm run build && npm publish"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heidji/ionic3-android-backbutton.git"
